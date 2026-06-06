@@ -1,0 +1,15 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+.terraformrc
+terraform.rc
+
+# Node
+node_modules/
+npm-debug.log
+
+# OS
+.DS_Store
