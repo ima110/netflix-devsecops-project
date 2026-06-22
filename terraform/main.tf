@@ -1,6 +1,6 @@
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "6.5.1"
+  version = "5.21.0"
 
   name = "netflix-vpc"
   cidr = "10.0.0.0/16"
@@ -26,13 +26,32 @@ module "vpc" {
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "21.4.0"
+  version = "20.37.2"
 
-  name               = var.cluster_name
-  kubernetes_version = "1.33"
+  cluster_name    = var.cluster_name
+  cluster_version = "1.33"
 
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.private_subnets
+
+  cluster_endpoint_private_access = true
+  cluster_endpoint_public_access  = false
+
+  enable_cluster_creator_admin_permissions = true
+
+  cluster_addons = {
+    vpc-cni = {
+      most_recent = true
+    }
+
+    kube-proxy = {
+      most_recent = true
+    }
+
+    coredns = {
+      most_recent = true
+    }
+  }
 
   eks_managed_node_groups = {
     default = {
@@ -48,7 +67,6 @@ module "eks" {
     Project = "Netflix-DevSecOps"
   }
 }
-
 data "aws_ami" "amazon_linux_2023" {
   most_recent = true
   owners      = ["amazon"]

@@ -1,0 +1,169 @@
+i-07d1f1a39d1494492	[2J[01;01H[=3h[2J[01;01H[2J[01;01H[=3h[2J[01;01H[2J[01;01H[=3h[2J[01;01H[0m[35m[40m[2J[01;01H[=3h[2J[01;01H[0m[37m[40m  Booting `Amazon Linux (6.12.90-120.164.amzn2023.x86_64) 2023'
+
+[    0.059741] RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+[    3.150643] RPC: Registered named UNIX socket transport module.
+[    3.151356] RPC: Registered udp transport module.
+[    3.151995] RPC: Registered tcp transport module.
+[    3.152632] RPC: Registered tcp-with-tls transport module.
+[    3.153405] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    3.309930] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    3.342824] ACPI: button: Power Button [PWRF]
+[    3.343465] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+[    3.345106] ACPI: button: Sleep Button [SLPF]
+[    3.361424] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[    3.362699] i8042: Warning: Keylock active
+[    3.370450] ena 0000:00:05.0: Elastic Network Adapter (ENA) v2.16.1g
+[    3.379512] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    3.380114] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    3.384416] ena 0000:00:05.0: ENA device version: 0.10
+[    3.385053] ena 0000:00:05.0: ENA controller version: 0.0.1 implementation version 1
+[    3.462697] ena 0000:00:05.0: LLQ is not supported Fallback to host mode policy.
+[    3.466093] nvme nvme0: using unchecked data buffer
+[    3.475063] ena 0000:00:05.0: Elastic Network Adapter (ENA) found at mem c0400000, mac addr 0a:ff:d1:d5:fe:99
+[    3.521883] ena 0000:00:05.0 ens5: renamed from eth0
+[    3.668434] zram_generator::config[1940]: zram0: system has too much memory (3834MB), limit is 800MB, ignoring.
+[    6.366414] nodeadm-internal[2043]: info boot-book/hook.go:58 Waiting for consistent network interfaces..
+[    6.421681] nodeadm-internal[2043]: info system/networking.go:83 checking link states...
+[    6.429411] nodeadm-internal[2043]: info system/networking.go:119 secondary link unmanaged {"linkName": "lo"}
+[    6.431270] nodeadm-internal[2043]: info system/networking.go:109 link configured {"linkName": "ens5"}
+[    6.432886] nodeadm-internal[2043]: info boot-book/hook.go:62 Completed boot hook!
+[    6.720207] nodeadm[2057]: info init/init.go:55 Checking user is root..
+[    6.721558] nodeadm[2057]: info init/init.go:65 Loading configuration.. {"configSource": ["imds://user-data"], "configCache": "/run/eks/nodeadm/config.json"}
+[    6.723942] nodeadm[2057]: warn cli/config.go:25 failed to load cached config {"error": "open /run/eks/nodeadm/config.json: no such file or directory"}
+[    6.738037] nodeadm[2057]: info init/init.go:75 Setting up nodeadm environment aspect...
+[    6.739654] nodeadm[2057]: info init/init.go:84 Enriching configuration..
+[    6.740858] nodeadm[2057]: info init/init.go:164 Fetching kubelet version..
+[    6.742131] nodeadm[2057]: info kubelet/version.go:30 Reading kubelet version from file {"path": "/etc/eks/kubelet-version.txt"}
+[    6.744636] nodeadm[2057]: info init/init.go:170 Fetched kubelet version {"version": "v1.33.13"}
+[    6.746142] nodeadm[2057]: info init/init.go:171 Fetching instance details..
+[    6.757269] nodeadm[2057]: SDK 2026/06/21 15:20:53 DEBUG attempting waiter request, attempt count: 1
+[    7.012071] nodeadm[2057]: info init/init.go:201 Instance details populated {"details": {"id":"i-07d1f1a39d1494492","region":"us-east-1","type":"t3.medium","availabilityZone":"us-east-1b","mac":"0a:ff:d1:d5:fe:99","privateDnsName":"ip-10-0-4-35.ec2.internal"}}
+[    7.016150] nodeadm[2057]: info init/init.go:202 Fetching default options...
+[    7.017455] nodeadm[2057]: info init/init.go:206 Default options populated {"defaults": {"sandboxImage":"localhost/kubernetes/pause"}}
+[    7.019534] nodeadm[2057]: info init/init.go:89 Loaded configuration {"config": {"metadata":{},"spec":{"cluster":{"name":"netflix-eks-cluster","apiServerEndpoint":"https://B5ADCA00E790D770CCF83997F0C5449D.yl4.us-east-1.eks.amazonaws.com","certificateAuthority":"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJTVkwdllQOEpiWjR3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBMk1qRXhOVEE1TlROYUZ3MHpOakEyTVRneE5URTBOVE5hTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURLVzl6Z0VpTWJRRVRPRVA1YStqVDBqTFZjYXRMSXl3WEozVVNONW53ZEQ0M05Cdmd4S1hGZjVsTFkKdk1LTFZyaE5la05JaWFHNmhvckJLL1Z2WHJQQkViZXRLTElZMi91blpmdjl2L0NoWVd1MXZYSzJ1ejVMWnJPUApuYUs3M2ZzdHNyNE43VEhOTGRrdWw3NG9GUWdGWDRkQ0ZGcUNSZFBvSzBnUHY1dm55cE9rYW56SjdPc0Q5bldQClVKTkdvbXhKYTEreFlxelFzZlV3V0hSN3VmaDZVUm53dGZDYW13VmQrMWM4WmJ0SHRIY2F4ZEE2MkZJd1pZMGYKU1ZPS2YyVnBWYjFoREM1SzlWb0RXbm9IN25BMXZzenUrd2xoL3I0TkJ3SU8zR1QzUXIybkxXUWdLN2l3ejFWNQ[2026-06-21T15:20:54.967695]o3YWVHODAyTnREa2tyRDJFcHhBcUhIVms3cjdWQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJTVHZpcm1hR3EwQ0p0ZnNCVEFIZVBXWXp2MTZUQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQTFOZWVFczVKNApkR3UvV0duS1cwajVGZURDSzkzK2tnL3oxRHhndUVmbnlTeG1BZmVxMUNuTm5WZHpVdENiMFRhRFZnK0F2clJiCk52dzRNT01Sa0FFR01GeG9XbE4wUWNkWGp1R1ZUUmdZcG9QS0tDMm80WkViYmFiWUNnOVRsQ2JJak50LzVvNnYKOUFtTWdUR2pnZDVodHVUWDl1K1grZ3phZ0ZEQmQxRTRXNXBSZ0NvajR6VnlCOXY2Y09GZkRxbGMxQThOQlU2eApuTHBaOFBMRE5CdUgxVzFpT0Rwekh6UVdBYVFVK0dpN2JLOGNVK0g1ZW5tTytPS1hrQW9HS3haQlFYRVRrOEd6CnhrcnhIbS8rUDlvbzI4cWxVUkhpNGJqYjByKzRxR2RLSSt5R2tmYkJtS2s3YnlLcTFzN3JQTkZzU3krclkrR2QKNVBqS3gvWVVrM2thCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K","cidr":"172.20.0.0/16"},"containerd":{},"instance":{"localStorage":{},"network":{}},"kubelet":{"config":{"clusterDNS":["172.20.0.10"]},"flags":["--node-labels=eks.amazonaws.com/sourceLaunchTemplateVersion=1,eks.amazonaws.com/nodegroup-image=ami-0f[2026-06-21T15:20:54.967716]4f251171f2f82e9,eks.amazonaws.com/capacityType=ON_DEMAND,eks.amazonaws.com/nodegroup=default-2026062115192773800000000c,eks.amazonaws.com/sourceLaunchTemplateId=lt-0b0521f3d33694449"]}},"status":{"instance":{"id":"i-07d1f1a39d1494492","region":"us-east-1","type":"t3.medium","availabilityZone":"us-east-1b","mac":"0a:ff:d1:d5:fe:99","privateDnsName":"ip-10-0-4-35.ec2.internal"},"default":{"sandboxImage":"localhost/kubernetes/pause"},"kubeletVersion":"v1.33.13"}}}
+[    7.055208] nodeadm[2057]: info init/init.go:91 Validating configuration..
+[    7.056491] nodeadm[2057]: info init/init.go:96 Creating daemon manager..
+[    7.057697] nodeadm[2057]: info init/init.go:120 Setting up system config aspects...
+[    7.059056] nodeadm[2057]: info init/init.go:252 Setting up system aspect.. {"name": "instance-environment"}
+[    7.060738] nodeadm[2057]: info system/environment.go:75 No environment variables to configure
+[    7.062190] nodeadm[2057]: info init/init.go:256 Set up system aspect {"name": "instance-environment"}
+[    7.063802] nodeadm[2057]: info init/init.go:252 Setting up system aspect.. {"name": "resolve"}
+[    7.065276] nodeadm[2057]: info init/init.go:256 Set up system aspect {"name": "resolve"}
+[    7.066691] nodeadm[2057]: info init/init.go:129 Configuring daemons...
+[    7.067842] nodeadm[2057]: info init/init.go:217 Configuring daemon... {"name": "containerd"}
+[    7.069315] nodeadm[2057]: info containerd/base_runtime_spec.go:20 Writing containerd base runtime spec... {"path": "/etc/containerd/base-runtime-spec.json"}
+[    7.071800] nodeadm[2057]: info containerd/version.go:33 Reading containerd version from file {"path": "/etc/eks/containerd-version.txt"}
+[    7.073884] nodeadm[2057]: info containerd/config.go:77 Writing containerd config to file.. {"path": "/etc/containerd/config.toml"}
+[    7.075861] nodeadm[2057]: info init/init.go:221 Configured daemon {"name": "containerd"}
+[    7.077270] nodeadm[2057]: info init/init.go:217 Configuring daemon... {"name": "kubelet"}
+[    7.080048] nodeadm[2057]: info kubelet/config.go:232 Setup IP for node {"ip": "10.0.4.35"}
+[    7.086156] nodeadm[2057]: info kubelet/config.go:347 Writing kubelet config to file.. {"path": "/etc/kubernetes/kubelet/config.json"}
+[    7.088469] nodeadm[2057]: info kubelet/config.go:372 Writing user kubelet config to drop-in file.. {"path": "/etc/kubernetes/kubelet/config.json.d/40-nodeadm.conf"}
+[    7.094604] nodeadm[2057]: info init/init.go:221 Configured daemon {"name": "kubelet"}
+[    7.097197] nodeadm[2057]: info init/init.go:156 done! {"duration": 0.379133916}
+[    7.844051] cloud-init[2065]: Cloud-init v. 22.2.2 running 'init' at Sun, 21 Jun 2026 15:20:54 +0000. Up 7.79 seconds.
+[    7.918063] cloud-init[2065]: ci-info: ++++++++++++++++++++++++++++++++++++++Net device info+++++++++++++++++++++++++++++++++++++++
+[    7.920436] cloud-init[2065]: ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+[    7.922730] cloud-init[2065]: ci-info: | Device |  Up  |           Address           |      Mask     | Scope  |     Hw-Address    |
+[    7.924680] cloud-init[2065]: ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+[    7.926687] cloud-init[2065]: ci-info: |  ens5  | True |          10.0.4.35          | 255.255.255.0 | global | 0a:ff:d1:d5:fe:99 |
+[    7.928628] cloud-init[2065]: ci-info: |  ens5  | True | fe80::8ff:d1ff:fed5:fe99/64 |       .       |  link  | 0a:ff:d1:d5:fe:99 |
+[    7.930614] cloud-init[2065]: ci-info: |   lo   | True |          127.0.0.1          |   255.0.0.0   |  host  |         .         |
+[    7.932555] cloud-init[2065]: ci-info: |   lo   | True |           ::1/128           |       .       |  host  |         .         |
+[    7.934487] cloud-init[2065]: ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+[    7.936462] cloud-init[2065]: ci-info: ++++++++++++++++++++++++++++Route IPv4 info+++++++++++++++++++++++++++++
+[    7.938123] cloud-init[2065]: ci-info: +-------+-------------+----------+-----------------+-----------+-------+
+[    7.939827] cloud-init[2065]: ci-info: | Route | Destination | Gateway  |     Genmask     | Interface | Flags |
+[    7.941539] cloud-init[2065]: ci-info: +-------+-------------+----------+-----------------+-----------+-------+
+[    7.944304] cloud-init[2065]: ci-info: |   0   |   0.0.0.0   | 10.0.4.1 |     0.0.0.0     |    ens5   |   UG  |
+[    7.945991] cloud-init[2065]: ci-info: |   1   |   10.0.0.2  | 10.0.4.1 | 255.255.255.255 |    ens5   |  UGH  |
+[    7.947726] cloud-init[2065]: ci-info: |   2   |   10.0.4.0  | 0.0.0.0  |  255.255.255.0  |    ens5   |   U   |
+[    7.949382] cloud-init[2065]: ci-info: |   3   |   10.0.4.1  | 0.0.0.0  | 255.255.255.255 |    ens5   |   UH  |
+[    7.951118] cloud-init[2065]: ci-info: +-------+-------------+----------+-----------------+-----------+-------+
+[    7.952825] cloud-init[2065]: ci-info: +++++++++++++++++++Route IPv6 info+++++++++++++++++++
+[    7.954310] cloud-init[2065]: ci-info: +-------+-------------+---------+-----------+-------+
+[    7.955793] cloud-init[2065]: ci-info: | Route | Destination | Gateway | Interface | Flags |
+[    7.957237] cloud-init[2065]: ci-info: +-------+-------------+---------+-----------+-------+
+[    7.958754] cloud-init[2065]: ci-info: |   0   |  fe80::/64  |    ::   |    ens5   |   U   |
+[    7.960214] cloud-init[2065]: ci-info: |   2   |    local    |    ::   |    ens5   |   U   |
+[    7.961742] cloud-init[2065]: ci-info: |   3   |  multicast  |    ::   |    ens5   |   U   |
+[    7.963204] cloud-init[2065]: ci-info: +-------+-------------+---------+-----------+-------+
+[    8.308287] cloud-init[2065]: 2026-06-21 15:20:54,573 - __init__.py[WARNING]: Unhandled unknown content-type (application/node.eks.aws) userdata: 'b'---'...'
+[    8.748304] cloud-init[2065]: Generating public/private ed25519 key pair.
+[    8.749771] cloud-init[2065]: Your identification has been saved in /etc/ssh/ssh_host_ed25519_key
+[    8.751496] cloud-init[2065]: Your public key has been saved in /etc/ssh/ssh_host_ed25519_key.pub
+[    8.753191] cloud-init[2065]: The key fingerprint is:
+[    8.754142] cloud-init[2065]: SHA256:ft22uVV8V2GO8pfKyEmnRpes65UbShk/zEHZlt9O5Ew root@ip-10-0-4-35.ec2.internal
+[    8.755875] cloud-init[2065]: The key's randomart image is:
+[    8.756864] cloud-init[2065]: +--[ED25519 256]--+
+[    8.757733] cloud-init[2065]: |               o |
+[    8.758666] cloud-init[2065]: |              * o|
+[    8.759550] cloud-init[2065]: |           . + =E|
+[    8.760463] cloud-init[2065]: |            = o*=|
+[    8.761364] cloud-init[2065]: |        S  + B o@|
+[    8.762246] cloud-init[2065]: |       .  +.#.=o+|
+[    8.763220] cloud-init[2065]: |        . .X.@o o|
+[    8.764103] cloud-init[2065]: |         .o +.++ |
+[    8.765020] cloud-init[2065]: |          .+ .+. |
+[    8.765903] cloud-init[2065]: +----[SHA256]-----+
+[    8.766777] cloud-init[2065]: Generating public/private ecdsa key pair.
+[    8.767927] cloud-init[2065]: Your identification has been saved in /etc/ssh/ssh_host_ecdsa_key
+[    8.769434] cloud-init[2065]: Your public key has been saved in /etc/ssh/ssh_host_ecdsa_key.pub
+[    8.771013] cloud-init[2065]: The key fingerprint is:
+[    8.771929] cloud-init[2065]: SHA256:gQyflOIjK0IcsSYhZPsLKuiKNaAUhmK0HE5/OmfM9GQ root@ip-10-0-4-35.ec2.internal
+[    8.773649] cloud-init[2065]: The key's randomart image is:
+[    8.774692] cloud-init[2065]: +---[ECDSA 256]---+
+[    8.775572] cloud-init[2065]: |+B. . ..         |
+[    8.776499] cloud-init[2065]: |Oo* .=.o         |
+[    8.777387] cloud-init[2065]: |=@.o +=E.        |
+[    8.778260] cloud-init[2065]: |*o+ O +  .       |
+[    8.779199] cloud-init[2065]: |oo * * .S        |
+[    8.780112] cloud-init[2065]: |B.o =            |
+[    8.781012] cloud-init[2065]: |*.o.             |
+[    8.781910] cloud-init[2065]: |+. .             |
+[    8.782803] cloud-init[2065]: |+.               |
+[    8.783681] cloud-init[2065]: +----[SHA256]-----+
+[    9.264186] cloud-init[2141]: Cloud-init v. 22.2.2 running 'modules:config' at Sun, 21 Jun 2026 15:20:55 +0000. Up 9.15 seconds.
+2026/06/21 15:20:55Z: SSM Agent unable to acquire credentials: <error>no valid credentials could be retrieved for ec2 identity. Default Host Management Err: error calling RequestManagedInstanceRoleToken: AccessDeniedException: Systems Manager's instance management role is not configured for account: 780604191148
+	status code: 400, request id: c292a9e9-98be-46c5-866f-a74f95027343</error>
+[    9.722413] cloud-init[2152]: Cloud-init v. 22.2.2 running 'modules:final' at Sun, 21 Jun 2026 15:20:55 +0000. Up 9.67 seconds.
+ci-info: no authorized SSH keys fingerprints found for user ec2-user.
+<14>Jun 21 15:20:56 cloud-init: #############################################################
+<14>Jun 21 15:20:56 cloud-init: -----BEGIN SSH HOST KEY FINGERPRINTS-----
+<14>Jun 21 15:20:56 cloud-init: 256 SHA256:gQyflOIjK0IcsSYhZPsLKuiKNaAUhmK0HE5/OmfM9GQ root@ip-10-0-4-35.ec2.internal (ECDSA)
+<14>Jun 21 15:20:56 cloud-init: 256 SHA256:ft22uVV8V2GO8pfKyEmnRpes65UbShk/zEHZlt9O5Ew root@ip-10-0-4-35.ec2.internal (ED25519)
+<14>Jun 21 15:20:56 cloud-init: -----END SSH HOST KEY FINGERPRINTS-----
+<14>Jun 21 15:20:56 cloud-init: #############################################################
+-----BEGIN SSH HOST KEY KEYS-----
+ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDd1kw0oc3kVuIHFGT0Ua1sjBd1ehSkhIiCB9+Sk357k2HlRciCm1n2+IvHa/T5/LDrydtsT3WevKKjvGzwUTvM= root@ip-10-0-4-35.ec2.internal
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM2INQ3aYhnbezCiGl5Wt8Y/Sf3i2ak96zwmEdJv2Sid root@ip-10-0-4-35.ec2.internal
+-----END SSH HOST KEY KEYS-----
+[    9.851845] cloud-init[2152]: Cloud-init v. 22.2.2 finished at Sun, 21 Jun 2026 15:20:56 +0000. Datasource DataSourceEc2.  Up 9.84 seconds
+[    9.974672] nodeadm[2165]: info init/init.go:55 Checking user is root..
+[    9.976115] nodeadm[2165]: info init/init.go:65 Loading configuration.. {"configSource": ["imds://user-data", "file:///etc/eks/nodeadm.d/"], "configCache": "/run/eks/nodeadm/config.json"}
+[    9.981963] nodeadm[2165]: warn configprovider/chain.go:30 Encountered error in config provider {"error": "no config found in directory"}
+[    9.984152] nodeadm[2165]: info init/init.go:75 Setting up nodeadm environment aspect...
+[    9.985704] nodeadm[2165]: info init/init.go:89 Loaded configuration {"config": {"metadata":{},"spec":{"cluster":{"name":"netflix-eks-cluster","apiServerEndpoint":"https://B5ADCA00E790D770CCF83997F0C5449D.yl4.us-east-1.eks.amazonaws.com","certificateAuthority":"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJTVkwdllQOEpiWjR3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBMk1qRXhOVEE1TlROYUZ3MHpOakEyTVRneE5URTBOVE5hTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURLVzl6Z0VpTWJRRVRPRVA1YStqVDBqTFZjYXRMSXl3WEozVVNONW53ZEQ0M05Cdmd4S1hGZjVsTFkKdk1LTFZyaE5la05JaWFHNmhvckJLL1Z2WHJQQkViZXRLTElZMi91blpmdjl2L0NoWVd1MXZYSzJ1ejVMWnJPUApuYUs3M2ZzdHNyNE43VEhOTGRrdWw3NG9GUWdGWDRkQ0ZGcUNSZFBvSzBnUHY1dm55cE9rYW56SjdPc0Q5bldQClVKTkdvbXhKYTEreFlxelFzZlV3V0hSN3VmaDZVUm53dGZDYW13VmQrMWM4WmJ0SHRIY2F4ZEE2MkZJd1pZMGYKU1ZPS2YyVnBWYjFoREM1SzlWb0RXbm9IN25BMXZzenUrd2xoL3I0TkJ3SU8zR1QzUXIybkxXUWdLN2l3ejFWNQ[2026-06-21T15:20:57.967665]o3YWVHODAyTnREa2tyRDJFcHhBcUhIVms3cjdWQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJTVHZpcm1hR3EwQ0p0ZnNCVEFIZVBXWXp2MTZUQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQTFOZWVFczVKNApkR3UvV0duS1cwajVGZURDSzkzK2tnL3oxRHhndUVmbnlTeG1BZmVxMUNuTm5WZHpVdENiMFRhRFZnK0F2clJiCk52dzRNT01Sa0FFR01GeG9XbE4wUWNkWGp1R1ZUUmdZcG9QS0tDMm80WkViYmFiWUNnOVRsQ2JJak50LzVvNnYKOUFtTWdUR2pnZDVodHVUWDl1K1grZ3phZ0ZEQmQxRTRXNXBSZ0NvajR6VnlCOXY2Y09GZkRxbGMxQThOQlU2eApuTHBaOFBMRE5CdUgxVzFpT0Rwekh6UVdBYVFVK0dpN2JLOGNVK0g1ZW5tTytPS1hrQW9HS3haQlFYRVRrOEd6CnhrcnhIbS8rUDlvbzI4cWxVUkhpNGJqYjByKzRxR2RLSSt5R2tmYkJtS2s3YnlLcTFzN3JQTkZzU3krclkrR2QKNVBqS3gvWVVrM2thCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K","cidr":"172.20.0.0/16"},"containerd":{},"instance":{"localStorage":{},"network":{}},"kubelet":{"config":{"clusterDNS":["172.20.0.10"]},"flags":["--node-labels=eks.amazonaws.com/sourceLaunchTemplateVersion=1,eks.amazonaws.com/nodegroup-image=ami-0f[2026-06-21T15:20:57.967696]4f251171f2f82e9,eks.amazonaws.com/capacityType=ON_DEMAND,eks.amazonaws.com/nodegroup=default-2026062115192773800000000c,eks.amazonaws.com/sourceLaunchTemplateId=lt-0b0521f3d33694449"]}},"status":{"instance":{"id":"i-07d1f1a39d1494492","region":"us-east-1","type":"t3.medium","availabilityZone":"us-east-1b","mac":"0a:ff:d1:d5:fe:99","privateDnsName":"ip-10-0-4-35.ec2.internal"},"default":{"sandboxImage":"localhost/kubernetes/pause"},"kubeletVersion":"v1.33.13"}}}
+[   10.018793] nodeadm[2165]: info init/init.go:91 Validating configuration..
+[   10.020071] nodeadm[2165]: info init/init.go:96 Creating daemon manager..
+[   10.021215] nodeadm[2165]: info init/init.go:141 Setting up system run aspects...
+[   10.022453] nodeadm[2165]: info init/init.go:252 Setting up system aspect.. {"name": "marker"}
+[   10.023888] nodeadm[2165]: info init/init.go:256 Set up system aspect {"name": "marker"}
+[   10.025230] nodeadm[2165]: info init/init.go:252 Setting up system aspect.. {"name": "local-disk"}
+[   10.026722] nodeadm[2165]: info system/local_disk.go:24 Not configuring local disks!
+[   10.028013] nodeadm[2165]: info init/init.go:256 Set up system aspect {"name": "local-disk"}
+[   10.029374] nodeadm[2165]: info init/init.go:150 Running daemons...
+[   10.030438] nodeadm[2165]: info init/init.go:233 Ensuring daemon is running.. {"name": "containerd"}
+[   11.016232] nodeadm[2165]: info init/init.go:237 Daemon is running {"name": "containerd"}
+[   11.017795] nodeadm[2165]: info init/init.go:239 Running post-launch tasks.. {"name": "containerd"}
+[   11.019358] nodeadm[2165]: info init/init.go:243 Finished post-launch tasks {"name": "containerd"}
+[   11.020892] nodeadm[2165]: info init/init.go:233 Ensuring daemon is running.. {"name": "kubelet"}
+[   11.291384] nodeadm[2165]: info init/init.go:237 Daemon is running {"name": "kubelet"}
+[   11.292962] nodeadm[2165]: info init/init.go:239 Running post-launch tasks.. {"name": "kubelet"}
+[   11.294558] nodeadm[2165]: info init/init.go:243 Finished post-launch tasks {"name": "kubelet"}
+[   11.296455] nodeadm[2165]: info init/init.go:156 done! {"duration": 1.314072613}
+
+Amazon Linux 2023.12.20260611
+Kernel 6.12.90-120.164.amzn2023.x86_64 on an x86_64 (-)
+
+	2026-06-21T16:37:17+00:00
