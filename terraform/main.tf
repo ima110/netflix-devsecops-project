@@ -62,21 +62,40 @@ module "eks" {
       desired_size = 2
     }
   }
+  access_entries = {
+    bastion_admin = {
+      principal_arn = aws_iam_role.bastion_ssm_role.arn
+
+      policy_associations = {
+        admin = {
+          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+          access_scope = {
+            type = "cluster"
+          }
+        }
+      }
+    }
+  }
+
+  cluster_security_group_additional_rules = {
+    ingress_bastion_to_cluster_api = {
+      description              = "Allow private bastion to access EKS API endpoint"
+      protocol                 = "tcp"
+      from_port                = 443
+      to_port                  = 443
+      type                     = "ingress"
+      source_security_group_id = aws_security_group.bastion_sg.id
+    }
+  }
 
   tags = {
     Project = "Netflix-DevSecOps"
   }
 }
-data "aws_ami" "amazon_linux_2023" {
-  most_recent = true
-  owners      = ["amazon"]
 
-  filter {
-    name   = "name"
-    values = ["al2023-ami-*-x86_64"]
-  }
+data "aws_ssm_parameter" "amazon_linux_2023" {
+  name = "/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64"
 }
-
 resource "aws_iam_role" "bastion_ssm_role" {
   name = "netflix-bastion-ssm-role"
 
@@ -118,14 +137,38 @@ resource "aws_security_group" "bastion_sg" {
     Project = "Netflix-DevSecOps"
   }
 }
+resource "aws_iam_role_policy" "bastion_eks_policy" {
+  name = "netflix-bastion-eks-policy"
+  role = aws_iam_role.bastion_ssm_role.id
 
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "eks:DescribeCluster",
+          "eks:ListClusters"
+        ]
+        Resource = "*"
+      }
+    ]
+  })
+}
 resource "aws_instance" "bastion" {
-  ami                         = data.aws_ami.amazon_linux_2023.id
+  ami                         = data.aws_ssm_parameter.amazon_linux_2023.value
   instance_type               = "t3.micro"
   subnet_id                   = module.vpc.private_subnets[0]
   vpc_security_group_ids      = [aws_security_group.bastion_sg.id]
   iam_instance_profile        = aws_iam_instance_profile.bastion_profile.name
   associate_public_ip_address = false
+
+  user_data = <<-EOF
+    #!/bin/bash
+    dnf install -y amazon-ssm-agent
+    systemctl enable amazon-ssm-agent
+    systemctl restart amazon-ssm-agent
+  EOF
 
   tags = {
     Name    = "netflix-private-bastion"
