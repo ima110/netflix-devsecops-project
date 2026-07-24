@@ -168,6 +168,12 @@ resource "aws_instance" "bastion" {
     dnf install -y amazon-ssm-agent
     systemctl enable amazon-ssm-agent
     systemctl restart amazon-ssm-agent
+    cd /tmp
+    curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.33.0/2025-05-01/bin/linux/amd64/kubectl
+    chmod +x kubectl
+    sudo mv kubectl /usr/local/bin/kubectl
+    aws eks update-kubeconfig   --region us-east-1   --name netflix-eks-cluster
+    kubectl create namespace netflix
   EOF
 
   tags = {

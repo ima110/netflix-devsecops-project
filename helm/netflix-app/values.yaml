@@ -1,0 +1,37 @@
+namespace:
+  name: netflix
+
+replicaCount: 2
+
+image:
+  repository: 780604191148.dkr.ecr.us-east-1.amazonaws.com/netflix-ecr
+  tag: v1
+  pullPolicy: Always
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 3000
+
+container:
+  port: 3000
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+
+readinessProbe:
+  path: /
+  initialDelaySeconds: 20
+  periodSeconds: 10
+  failureThreshold: 3
+
+livenessProbe:
+  path: /
+  initialDelaySeconds: 40
+  periodSeconds: 20
+  failureThreshold: 3
